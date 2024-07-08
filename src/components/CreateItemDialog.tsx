@@ -22,7 +22,7 @@ export default function CreateItemDialog(){
                 </div>
                 <div className=" grid grid-cols-6 items-center text-right gap-3">
                     <Label htmlFor="quantidade">Quantidade</Label>
-                    <Input className="col-span-3" id="quantidade"/>
+                    <Input type="number" className="col-span-3" id="quantidade"/>
                 </div>
                 <div className=" grid grid-cols-6 items-center text-right gap-3">
                     <Label htmlFor="categoria">Categoria</Label>
@@ -30,7 +30,7 @@ export default function CreateItemDialog(){
                 </div>
                 <div className=" grid grid-cols-6 items-center text-right gap-3">
                     <Label htmlFor="imagens">Imagens</Label>
-                    <Input className="col-span-3" id="imagens"/>
+                    <Input type="image" className="col-span-3" id="imagens"/>
                 </div>
 
                 <DialogFooter>

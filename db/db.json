@@ -1,0 +1,11 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "nome": "tesoura",
+            "descricao": "Grande e Afiada",
+            "quantidade": 4,
+            "categoria": "Papelaria"
+        }
+    ]
+}

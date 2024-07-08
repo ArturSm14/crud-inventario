@@ -1,5 +1,6 @@
 import AsideDashboard from "@/components/AsideDashboard"
-import LogoutButton from "@/components/LogoutButton"
+import CardItem from "@/components/CardItem"
+import HeaderDashBoard from "@/components/HeaderDashBoard"
 import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 
@@ -12,6 +13,12 @@ export default async function Page() {
     }
 
     return (
-      <AsideDashboard />     
+        <div className="flex">
+            <AsideDashboard />
+            <div className="w-screen mx-auto">
+                <HeaderDashBoard />
+                <CardItem />
+            </div>
+        </div>
     )
 }

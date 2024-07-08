@@ -24,7 +24,7 @@ export default function LoginForm() {
     }
 
     return(
-        <form onSubmit={handleSubmit(login)} className="bg-white p-12 rounded-lg w-96 max-w-full flex justify-center  flex-col gap-3">
+        <form onSubmit={handleSubmit(login)} className="bg-white text-black p-12 rounded-lg w-96 max-w-full flex justify-center  flex-col gap-3">
             <h2 className="font-bold text-xl mb-6">Faça seu Login</h2>
             <Label htmlFor="email" className="text-lg">Digite seu email:</Label>
             <Input

@@ -15,9 +15,11 @@ export default async function Page() {
     return (
         <div className="flex">
             <AsideDashboard />
-            <div className="w-screen mx-auto">
+            <div className="w-screen mx-auto flex flex-col gap-10">
                 <HeaderDashBoard />
-                <CardItem />
+                <main className="p-6">
+                    <CardItem />
+                </main>
             </div>
         </div>
     )

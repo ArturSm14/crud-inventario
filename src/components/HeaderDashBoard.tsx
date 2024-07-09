@@ -12,7 +12,7 @@ export default function HeaderDashBoard() {
             <Button>Novo Item</Button>
           </DialogTrigger>
 
-          <CreateItemDialog></CreateItemDialog>
+          <CreateItemDialog />
         </Dialog>
         <form className="flex items-center gap-2">
           <Input className="w-[25em]" id="nome" placeholder="Buscar Item" />

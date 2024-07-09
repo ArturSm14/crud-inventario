@@ -3,7 +3,7 @@ export interface ItemData{
     id: number;
     nome: string;
     descricao: string;
-    quantidade: number;
+    quantidade: string;
     categoria: string;
     imagens: string;
 }

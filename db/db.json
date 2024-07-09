@@ -1,11 +1,19 @@
 {
-    "items": [
-        {
-            "id": 1,
-            "nome": "tesoura",
-            "descricao": "Grande e Afiada",
-            "quantidade": 4,
-            "categoria": "Papelaria"
-        }
-    ]
+  "items": [
+    {
+      "id": 1,
+      "nome": "tesoura",
+      "descricao": "Grande e Afiada",
+      "quantidade": 4,
+      "categoria": "Papelaria"
+    },
+    {
+      "nome": "teste",
+      "descricao": "sjasalskals",
+      "quantidade": "4",
+      "categoria": "ferro",
+      "imagens": "",
+      "id": 2
+    }
+  ]
 }

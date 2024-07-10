@@ -1,7 +1,12 @@
+import LoginForm from "@/components/LoginForm";
 
 
 export default function Home() {
   return (
-    <h1>Olá Mundo!</h1>
+    <main>
+      <div className="h-screen flex justify-center items-center  px-5">
+          <LoginForm />
+      </div>
+    </main>
   );
 }

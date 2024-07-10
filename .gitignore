@@ -9,6 +9,10 @@
 # testing
 /coverage
 
+
+# Ignore environment variable files
+.env
+
 # next.js
 /.next/
 /out/
@@ -34,3 +38,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+

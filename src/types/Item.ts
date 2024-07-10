@@ -1,9 +1,8 @@
 
 export interface ItemData{
-    id: number;
-    nome: string;
-    descricao: string;
-    quantidade: string;
-    categoria: string;
-    imagens: string;
+    id: string;
+    name: string;
+    description: string;
+    amount: string;
+    category: string;
 }

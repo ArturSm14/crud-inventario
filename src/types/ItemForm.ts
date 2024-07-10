@@ -1,11 +1,11 @@
 import * as z from "zod";
 
-export const createItemSchema = z.object({
-    nome: z.string(),
-    descricao: z.string(),
-    quantidade: z.string(),
-    categoria: z.string(),
-    imagens: z.string(),
+export const itemSchema = z.object({
+    name: z.string(),
+    description: z.string(),
+    amount: z.string(),
+    category: z.string(),
+    
 })
 
-export type CreateItemSchema = z.infer<typeof createItemSchema>
+export type ItemSchema = z.infer<typeof itemSchema>

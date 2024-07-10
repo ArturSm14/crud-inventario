@@ -3,11 +3,16 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { ItemData } from "@/types/Item";
 import useItemStore from "@/store/useItemStore";
+import { Button } from "./ui/button";
+import { Dialog } from "@radix-ui/react-dialog";
+import { DialogTrigger } from "./ui/dialog";
+import EditItemDialog from "./EditItemDialog";
 
 export default function CardItem() {
 
-    const { items, setItems } = useItemStore();
+    const { items, setItems, removeItem } = useItemStore();
     const [loading, setLoading] = useState(true);
+    const[selectedItem, setSelectedItem] = useState<ItemData | null>(null)
 
     useEffect(() => {
         async function fetchData() {
@@ -26,7 +31,32 @@ export default function CardItem() {
         }
 
         fetchData();
-    }, [setItems])
+    }, [])
+
+    
+
+    const handleUpdatedItem = (updatedItem : ItemData) => {
+        setItems((prevItems: ItemData[]) => 
+            prevItems.map(item => item.id === updatedItem.id ? updatedItem : item)
+        );
+   }
+
+   async function handleDeleteItem(id: string) {
+    try {
+        const response = await fetch(`http://localhost:3001/items/${id}`, {
+            method: 'DELETE',
+        });
+    
+        if (!response.ok) {
+            throw new Error('Erro ao deletar paciente');
+        }
+
+        removeItem(id);
+    } catch (error) {
+        console.error('Erro ao deletar paciente:', error)
+    }
+
+}
 
     
     return(
@@ -35,19 +65,35 @@ export default function CardItem() {
                 <p className="text-center">Carregando...</p>
             ) : (
                 items.map((item) => (
-                    <Card key={item.id} className="bg-black text-white border-none w-1/4 h-96 flex flex-col justify-center items-center">
-                        <CardHeader className="flex justify-center items-center">
-                            <CardTitle>{item.nome}</CardTitle>
-                            <CardDescription>{item.descricao}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <p>Imagem</p>
-                        </CardContent>
-                        <CardFooter className="flex flex-col">
-                            <p>{item.categoria}</p>
-                            <p>{item.quantidade}</p>
-                        </CardFooter>
-                    </Card>
+                        <Card key={item.id} className="bg-black text-white border-none w-1/4 h-96 flex flex-col justify-center items-center">
+                            <CardHeader className="flex items-center h-screen">
+                                <CardTitle>{item.name}</CardTitle>
+                                <CardDescription>{item.description}</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <p>Imagem</p>
+                            </CardContent>
+                            <CardFooter className="flex flex-col">
+                                <p>{item.category}</p>
+                                <p>{item.amount}</p>
+                            </CardFooter>
+                            <div className="w-max flex gap-36">
+                                <Dialog>
+                                    <DialogTrigger asChild>
+                                        <Button onClick={() => setSelectedItem(item)}>Editar</Button>
+                                    </DialogTrigger>
+
+                                    {selectedItem && (
+                                        <EditItemDialog 
+                                            itemId={selectedItem.id}
+                                            initialData={selectedItem}
+                                            onItemUpdated={handleUpdatedItem}
+                                        />
+                                    )}
+                                </Dialog>
+                                <Button onClick={() => handleDeleteItem(item.id)} variant={"destructive"}>Excluir</Button>
+                            </div>
+                        </Card>
                 ))
             )}
         </div>

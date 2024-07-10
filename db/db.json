@@ -1,19 +1,18 @@
 {
   "items": [
     {
-      "id": 1,
-      "nome": "tesoura",
-      "descricao": "Grande e Afiada",
-      "quantidade": 4,
-      "categoria": "Papelaria"
+      "id": "4bdb",
+      "name": "tesoura",
+      "description": "afiada",
+      "amount": "10",
+      "category": "cozinha"
     },
     {
-      "nome": "teste",
-      "descricao": "sjasalskals",
-      "quantidade": "4",
-      "categoria": "ferro",
-      "imagens": "",
-      "id": 2
+      "id": "fe37",
+      "name": "teste12345",
+      "description": "suaksjkja",
+      "amount": "djsndskdkl",
+      "category": "sasa"
     }
   ]
 }

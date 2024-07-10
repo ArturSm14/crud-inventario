@@ -48,12 +48,12 @@ export default function CardItem() {
         });
     
         if (!response.ok) {
-            throw new Error('Erro ao deletar paciente');
+            throw new Error('Erro ao deletar item');
         }
 
         removeItem(id);
     } catch (error) {
-        console.error('Erro ao deletar paciente:', error)
+        console.error('Erro ao deletar item:', error)
     }
 
 }

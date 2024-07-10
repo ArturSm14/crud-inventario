@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
-import { LoginFormInputs, loginSchema } from "@/types/form";
+import { LoginFormInputs, loginSchema } from "@/types/LoginFormSchema";
+
 
 
 export default function LoginForm() {

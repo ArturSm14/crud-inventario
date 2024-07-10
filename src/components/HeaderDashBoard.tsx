@@ -3,15 +3,22 @@ import { ItemData } from "@/types/Item";
 import CreateItemDialog from "./CreateItemDialog";
 import { Button } from "./ui/button";
 import { Dialog, DialogTrigger } from "./ui/dialog";
-import { Input } from "./ui/input";
+
 import useItemStore from "@/store/useItemStore";
+import ItemsFilter from "./ItemsFilter";
+
+
 
 export default function HeaderDashBoard() {
 
-  const {  setItems } = useItemStore();
+  const { setItems, filterItemsByName } = useItemStore();
 
   async function handleAddItem(newItem: ItemData) {
     setItems((prev) => [...prev, newItem])
+  }
+
+  function handleFilter(name: string) {
+    filterItemsByName(name)
   }
 
   return (
@@ -24,10 +31,10 @@ export default function HeaderDashBoard() {
 
           <CreateItemDialog onAddItem={handleAddItem}/>
         </Dialog>
-        <form className="flex items-center gap-2">
-          <Input className="w-[25em]" id="nome" placeholder="Buscar Item" />
-          <Button type="submit" variant={"secondary"}>Buscar</Button>
-        </form>
+        
+        <ItemsFilter onFilter={handleFilter}/>
+
+        
       </div>
     </header>
   );

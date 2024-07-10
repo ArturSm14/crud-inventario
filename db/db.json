@@ -1,18 +1,18 @@
 {
   "items": [
     {
-      "id": "4bdb",
-      "name": "tesoura",
-      "description": "afiada",
-      "amount": "10",
-      "category": "cozinha"
+      "id": "5b65",
+      "name": "bolsa",
+      "description": "pequena",
+      "amount": "3",
+      "category": "mochilas"
     },
     {
-      "id": "fe37",
-      "name": "teste12345",
-      "description": "suaksjkja",
-      "amount": "djsndskdkl",
-      "category": "sasa"
+      "id": "86a5",
+      "name": "constrole remoto",
+      "description": "controle para tv ",
+      "amount": "40",
+      "category": "televisão"
     }
   ]
 }

@@ -7,33 +7,13 @@ import { Button } from "./ui/button";
 import { Dialog } from "@radix-ui/react-dialog";
 import { DialogTrigger } from "./ui/dialog";
 import EditItemDialog from "./EditItemDialog";
+import { CardItemProps } from "@/types/CardItemProps";
 
-export default function CardItem() {
+const CardItem: React.FC<CardItemProps> =({ items, onFilter }) => {
 
-    const { items, setItems, removeItem } = useItemStore();
-    const [loading, setLoading] = useState(true);
+    const { setItems, removeItem } = useItemStore();
     const[selectedItem, setSelectedItem] = useState<ItemData | null>(null)
 
-    useEffect(() => {
-        async function fetchData() {
-            try{
-                const response = await fetch('http://localhost:3001/items')
-                if (!response.ok) {
-                    throw new Error('Erro ao buscar dados');
-                }
-                const data: ItemData[] = await response.json();
-                setItems(data)
-            } catch(error) {
-                console.error('Erro: ', error);
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        fetchData();
-    }, [])
-
-    
 
     const handleUpdatedItem = (updatedItem : ItemData) => {
         setItems((prevItems: ItemData[]) => 
@@ -61,9 +41,7 @@ export default function CardItem() {
     
     return(
         <div className="flex flex-wrap gap-3">
-            {loading ? (
-                <p className="text-center">Carregando...</p>
-            ) : (
+            {(
                 items.map((item) => (
                         <Card key={item.id} className="bg-black text-white border-none w-1/4 h-96 flex flex-col justify-center items-center">
                             <CardHeader className="flex items-center h-screen">
@@ -99,3 +77,5 @@ export default function CardItem() {
         </div>
     )
 }
+
+export default CardItem;

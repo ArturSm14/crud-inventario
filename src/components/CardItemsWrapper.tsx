@@ -4,7 +4,7 @@ import CardItem from "./CardItem";
 import { useEffect } from "react";
 
 const CardItemsWrapper: React.FC = () => {
-    const {filteredItems , fetchItems, filterItemsByName, restoreItems } = useItemStore((state) => ({
+    const { filteredItems , fetchItems, filterItemsByName, restoreItems } = useItemStore((state) => ({
         filteredItems: state.filteredItems,
         fetchItems: state.fetchItems,
         filterItemsByName: state.filterItemsByName,

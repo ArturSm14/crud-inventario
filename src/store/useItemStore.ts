@@ -5,7 +5,12 @@ import { create } from "zustand";
 const useItemStore = create<StateItem>((set) => ({
     items: [],
     filteredItems: [],
-    addItem: (item) => set((state) => ({ items: [...state.items, item], filteredItems: [...state.filteredItems, item] })),
+    addItem: (item) => set((state) => { 
+        console.log("adding item: ", item)
+        const items = [...state.items, item];
+        console.log("New items list", items)
+        return { items, filteredItems: items}
+    }),
     setItems: (newItems) => set((state) => {
         const items = typeof newItems === 'function' ? newItems(state.items) : newItems;
         return { items, filteredItems: items}
@@ -47,7 +52,7 @@ const useItemStore = create<StateItem>((set) => ({
     fetchItems: async () => {
         try{
             const response = await fetch('http://localhost:3001/items');
-            if (!response) {
+            if (!response.ok) {
                 throw new Error('Erro ao buscar dados');
             }
 

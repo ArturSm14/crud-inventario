@@ -1,8 +1,6 @@
-
 import AsideDashboard from "@/components/AsideDashboard"
 import CardItemsWrapper from "@/components/CardItemsWrapper"
 import HeaderDashBoard from "@/components/HeaderDashBoard"
-import useItemStore from "@/store/useItemStore"
 import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 

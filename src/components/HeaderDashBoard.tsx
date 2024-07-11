@@ -11,10 +11,10 @@ import ItemsFilter from "./ItemsFilter";
 
 export default function HeaderDashBoard() {
 
-  const { setItems, filterItemsByName } = useItemStore();
+  const { addItem, filterItemsByName } = useItemStore();
 
   async function handleAddItem(newItem: ItemData) {
-    setItems((prev) => [...prev, newItem])
+    addItem(newItem)
   }
 
   function handleFilter(name: string) {

@@ -61,43 +61,51 @@ const CardItem: React.FC<CardItemProps> = ({ items, onFilter }) => {
           </CardHeader>
           <CardContent className="relative h-96">
                 <Carousel className="w-full h-full flex items-center justify-center">
-                    <CarouselContent className="flex">
-                        <CarouselItem className="flex-none md:basis-1/2 lg:basis-1/3">
+                    <CarouselContent className="flex w-full h-full">
+                      {item.imageUrl1 && (
+                        <CarouselItem className="flex-none w-full h-full">
+                            <Image 
+                                src={item.imageUrl1}
+                                alt={item.name}
+                                width={200}
+                                height={200}
+                                className="object-cover w-full h-full m-2"
+                            />
+                        </CarouselItem >
+                      )}
+                        {item.imageUrl2 && (
+                        <CarouselItem className="flex-none w-full h-full">
                             <Image 
                                 src={item.imageUrl1}
                                 alt={item.name}
                                 width={150}
                                 height={200}
-                                className="object-cover w-full h-full"
+                                className="object-cover w-full h-full m-2"
                             />
                         </CarouselItem >
-                        <CarouselItem className="md:basis-1/2 lg:basis-1/3 flex-none">
+                      )}
+                        {item.imageUrl3 && (
+                        <CarouselItem className="flex-none w-full h-full">
                             <Image 
-                                src={item.imageUrl2}
+                                src={item.imageUrl1}
                                 alt={item.name}
                                 width={150}
                                 height={200}
-                                className="object-cover w-full h-full "
+                                className="object-cover w-full h-full m-2"
                             />
-                        </CarouselItem>
-                        <CarouselItem className="flex-none md:basis-1/2 lg:basis-1/3">
+                        </CarouselItem >
+                      )}
+                        {item.imageUrl4 && (
+                        <CarouselItem className="flex-none w-full h-full">
                             <Image 
-                                src={item.imageUrl3}
+                                src={item.imageUrl1}
                                 alt={item.name}
                                 width={150}
                                 height={200}
-                                className="object-cover w-full h-full flex-none"
+                                className="object-cover w-full h-full m-2"
                             />
-                        </CarouselItem>
-                        <CarouselItem className=" flex-none md:basis-1/2 lg:basis-1/3">
-                            <Image 
-                                src={item.imageUrl4}
-                                alt={item.name}
-                                width={200}
-                                height={200}
-                                className="object-cover w-full h-full "
-                            />
-                        </CarouselItem>
+                        </CarouselItem >
+                      )}
                     </CarouselContent>
                     <CarouselPrevious />
                     <CarouselNext />

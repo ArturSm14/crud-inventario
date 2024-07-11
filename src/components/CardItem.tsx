@@ -73,10 +73,21 @@ const CardItem: React.FC<CardItemProps> = ({ items, onFilter }) => {
                             />
                         </CarouselItem >
                       )}
-                        {item.imageUrl2 && (
+                      {item.imageUrl2 && (
+                          <CarouselItem className="flex-none w-full h-full">
+                              <Image 
+                                  src={item.imageUrl2}
+                                  alt={item.name}
+                                  width={150}
+                                  height={200}
+                                  className="object-cover w-full h-full m-2"
+                              />
+                          </CarouselItem >
+                      )}
+                      {item.imageUrl3 && (
                         <CarouselItem className="flex-none w-full h-full">
                             <Image 
-                                src={item.imageUrl1}
+                                src={item.imageUrl3}
                                 alt={item.name}
                                 width={150}
                                 height={200}
@@ -84,21 +95,10 @@ const CardItem: React.FC<CardItemProps> = ({ items, onFilter }) => {
                             />
                         </CarouselItem >
                       )}
-                        {item.imageUrl3 && (
+                      {item.imageUrl4 && (
                         <CarouselItem className="flex-none w-full h-full">
                             <Image 
-                                src={item.imageUrl1}
-                                alt={item.name}
-                                width={150}
-                                height={200}
-                                className="object-cover w-full h-full m-2"
-                            />
-                        </CarouselItem >
-                      )}
-                        {item.imageUrl4 && (
-                        <CarouselItem className="flex-none w-full h-full">
-                            <Image 
-                                src={item.imageUrl1}
+                                src={item.imageUrl4}
                                 alt={item.name}
                                 width={150}
                                 height={200}

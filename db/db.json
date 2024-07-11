@@ -1,3 +1,15 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": "e1033f2d-2f08-4e6f-9fe9-7f26e85a6cdb",
+      "name": "Celular",
+      "description": "Iphone 13",
+      "amount": "10",
+      "category": "Eletrônico",
+      "imageUrl1": "https://as1.ftcdn.net/v2/jpg/04/62/44/34/1000_F_462443455_QLizt7r3i8slyXgsqKsnmvdE0vVJFlPE.jpg",
+      "imageUrl2": "https://as2.ftcdn.net/v2/jpg/04/96/82/19/1000_F_496821918_baBle1BNyTsonPcq40IbQqIT28qqwv18.jpg",
+      "imageUrl3": "https://as2.ftcdn.net/v2/jpg/04/56/93/39/1000_F_456933969_4dVLCRSXIaka8jn0fzxLse7pZn4QWqy1.jpg",
+      "imageUrl4": "https://as2.ftcdn.net/v2/jpg/04/62/44/33/1000_F_462443365_oQ0l8L3Ydxn3pUXJsmYT4ixJR7dwhU18.jpg"
+    }
+  ]
 }

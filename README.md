@@ -27,3 +27,5 @@ abrir um novo terminar e iniciar o projeto next com " npm run dev "
 
 abrir o projeto no localhost:3000 e colocar o email = artur@gmail.com e a senha = 123456, se preferir outra vá em route.tsx na pasta api e troque.
 
+##OBS:
+  Quando for adicionar um novo item utilize imagens deste site: https://stock.adobe.com/br/
